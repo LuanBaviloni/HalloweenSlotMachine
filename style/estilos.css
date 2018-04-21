@@ -1,0 +1,471 @@
+body, html {
+	margin				: 0;
+	padding				: 0;
+	font-family			: arial;
+	font-size			: 12px;
+	position			: relative;
+	
+}
+html {
+	height				: 100%;
+}
+body {
+	position			: absolute;
+	background-position	: center;
+	background-repeat	: no-repeat;
+	background-color	: black;
+	overflow			: hidden;
+	
+	min-height			: 100%;
+	width				: 100%;
+}
+ul {
+    padding				: 0;
+    margin				: 0;
+    list-style			: none;
+}
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+button:focus {outline:0;}
+
+.dvCanvas {
+	position			: absolute;
+	top					: 0;
+	left				: 0;
+	margin-left			: -60px;
+	margin-top			: -60px;
+}
+.dvLoading {
+	position	: absolute;
+	width		: 100%;
+	height		: 100%;
+	background	: #111;
+	font-weight	: bold;
+	font-size	: 30px;
+	color		: white;
+	text-align	: center;
+	z-index		: 10;
+	font-family	: Tahoma;
+}
+
+.jSlots-wrapper {
+	overflow			: hidden;
+	height				: 100%;
+	width				: 100%;
+	display				: inline-block; /* to size correctly, can use float too, or width*/
+	display				: flex;
+	justify-content 	: space-between;
+}
+.dvTop {
+
+	position		: relative;
+	width			: 80%;
+	margin			: 0 auto;
+	padding			: 10px;
+	padding-top		: 30px;
+	
+
+}
+.tbInfo {
+	color				: white;
+	font-weight			: bold;
+	border-collapse		: collapse;
+	font-size			: 20px;
+	width				: 100%;
+}
+.tbInfo td {
+	
+}
+
+
+.dvBox {
+	background				: #c4032d; /* Old browsers */
+	background				: -moz-linear-gradient(top,  #c4032d 0%, #a3030d 100%); /* FF3.6+ */
+	background				: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c4032d), color-stop(100%,#a3030d)); /* Chrome,Safari4+ */
+	background				: -webkit-linear-gradient(top,  #c4032d 0%,#a3030d 100%); /* Chrome10+,Safari5.1+ */
+	background				: -o-linear-gradient(top,  #c4032d 0%,#a3030d 100%); /* Opera 11.10+ */
+	background				: -ms-linear-gradient(top,  #c4032d 0%,#a3030d 100%); /* IE10+ */
+	background				: linear-gradient(to bottom,  #c4032d 0%,#a3030d 100%); /* W3C */
+	filter					: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4032d', endColorstr='#a3030d',GradientType=0 ); /* IE6-9 */
+
+
+	border					: 2px solid gold;
+	padding					: 5px 12px;
+	width					: 100%;
+	height					: 100%;
+	text-align				: center;
+	-webkit-border-radius	: 5px;
+	-moz-border-radius		: 5px;
+	border-radius			: 5px;
+	
+	font-size				: 28px;
+	color					: white;
+	font-weight				: bold;
+}
+
+
+/*.dvCenter {
+	position			: relative;
+	width				: 80%;
+	height				: 70%;
+	margin				: 0 auto;
+	
+	border				: 1px solid red;
+} /**/
+
+.dvAjusta {
+	position		: relative;
+	margin			: 0 auto;
+	width			: 80%;
+	padding-bottom	: 40%; /* 16:9 */
+}
+
+.dvAjusta  > div {
+	position		: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+}
+.dvCol {
+	height				: 100%;
+	width				: 19.6%;
+	float				: left;
+	background			: #222222;
+	background			: -moz-linear-gradient(top,  #222222 0%, #444444 50%, #222222 100%);
+	background			: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222222), color-stop(50%,#444444), color-stop(100%,#222222));
+	background			: -webkit-linear-gradient(top,  #222222 0%,#444444 50%,#222222 100%);
+	background			: -o-linear-gradient(top,  #222222 0%,#444444 50%,#222222 100%);
+	background			: -ms-linear-gradient(top,  #222222 0%,#444444 50%,#222222 100%);
+	background			: linear-gradient(to bottom,  #222222 0%,#444444 50%,#222222 100%);
+	
+	background			: linear-gradient(to bottom,  #7AC 0%,#CCC 50%, #7AC 100%);
+	filter				: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#222222',GradientType=0 );
+	border				: 1px solid silver;
+	position			: relative;
+}
+.ulSlot {
+	width				: 100%;
+	height				: 100%;
+	opacity				: 0;	
+}
+
+.source-image {
+	height				: 100%;
+	width				: 100%;
+	position			: absolute;
+	top					: 0;
+	left				: 0;
+	z-index				: -1;
+}
+
+.dvFoot {
+	width				: 80%;
+	margin				: 0 auto;
+	height				: 10%;
+	padding				: 10px;
+}
+.dvMsg {
+	color				: white;
+}
+
+._dvBtnPlay{
+	float				: right;
+	color				: white;
+	font-size			: 24px;
+	width				: 140px;
+	border-color		: silver;
+	cursor				: pointer;
+}
+
+.dvBtnPlay {
+	font-family			: Tahoma;
+	position			: relative;
+    color				: white;
+    background-color	: #c00;
+    font-weight			: bold;
+    font-size			: 30px;
+    display				: block;
+    padding				: 10px 5px;
+	width				: 160px;
+	text-align			: center;
+	cursor				: pointer;
+	float				: right;
+	border				: 1px solid gray;
+	top					: 0;
+	
+    -webkit-border-radius	: 8px;
+    -moz-border-radius		: 8px;
+    border-radius			: 8px;
+    -webkit-box-shadow		: 0px 9px 0px #700, 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow			: 0px 9px 0px #700, 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow				: 0px 9px 0px #700, 0px 9px 25px rgba(0,0,0,.7);
+	
+	-webkit-transition		: all 0.1s ease;
+	-moz-transition			: all 0.1s ease;
+	-ms-transition			: all 0.1s ease;
+	-o-transition			: all 0.1s ease;
+	transition				: all 0.1s ease;
+		
+}
+.dvBtnPlay:active{
+    -webkit-box-shadow	: 0px 3px 0px #700, 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow		: 0px 3px 0px #700, 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow			: 0px 3px 0px #700, 0px 3px 6px rgba(0,0,0,.9);
+    position			: relative;
+    top					: 6px;
+}
+.dvBetBase {
+	float				: right;
+	position			: absolute;
+	padding-top			: 20px;
+	width				: 100%;
+	height				: 100%;
+	text-align			: center;
+}
+.dvSizeNull {
+	width				: 0;
+	height				: 0;
+}
+/* ---- Specific ---- */
+
+.objHat, .objPumpkin, .objCauldron, .objSkull , .objVampire, .objCat, .objMoon, .objCandy, .objGhost, .objWitch, .objSatan, .objFrank {
+	height				: 33.33%;
+	background-repeat	: no-repeat;
+	background-position	: center;
+	background-size		: 60%;
+	/*border				: 1px solid silver; /**/
+}
+
+.objHat {
+	background-image	: url('../imgs/hat.png');
+}
+.objPumpkin {
+	background-image	: url('../imgs/pumpkin.png');
+}
+.objCauldron {
+	background-image	: url('../imgs/cauldron.png');
+}
+.objSkull {
+	background-image	: url('../imgs/skull.png');
+}
+.objVampire {
+	background-image	: url('../imgs/vampire.png');
+}
+.objCat {
+	background-image	: url('../imgs/cat.png');
+}
+.objMoon {
+	background-image	: url('../imgs/moon.png');
+}
+.objCandy {
+	background-image	: url('../imgs/candy.png');
+}
+.objGhost {
+	background-image	: url('../imgs/ghost.png');
+}
+.objWitch {
+	background-image	: url('../imgs/witch.png');
+}
+.objSatan {
+	background-image	: url('../imgs/satan.png');
+}
+.objFrank {
+	background-image	: url('../imgs/frankenstein.png');
+}
+
+
+.animBat {
+	background-image	: url('../imgs/bat.gif');
+	position			: absolute;
+	top					: 80%;
+	left				: 100%;
+	background-repeat	: no-repeat;
+	background-position	: center;
+	width				: 150px;
+	height				: 150px;
+}
+
+.bonusCauldron {
+	position			: absolute;
+	background-color	: #000;
+	width				: 100%;
+	height				: 100%;
+	z-index				: 5;
+	
+	color				: white;
+	font-size			: 40px;
+	
+	display				: none;
+	
+}
+
+.dvCauldronTop {
+	padding-top			: 40px;
+	position			: relative;
+	height				: 70%;
+	text-align			: center;
+	/*background-image	: url('http://www.artist-reference.com/wp-content/gallery/textures-r-us-photogallery/1-tru-hand-drawn-seamless-stone-sample.png'); /**/
+
+}
+.dvCauldronLine {
+
+	position			: absolute;
+	bottom				: 20px;
+	margin				: 0 auto;
+	left				: 0;
+	right				: 0;
+	height				: 42%;
+	width				: 80%;
+	display				: inline-block; /* to size correctly, can use float too, or width*/
+	display				: flex;
+	justify-content 	: space-between;
+}
+.objLineCauldron {
+	position			: relative;
+	background-image	: url('../imgs/cauldron.png');
+	height				: 100%;
+	width				: 20%;
+	
+	background-repeat	: no-repeat;
+	background-position	: center bottom;
+	background-size		: 70%;
+	text-align			: center;
+}
+.dvCauldronData {
+	height				: 30%;
+	background-image	: url('../imgs/textureCauldron.jpg');
+	background-size		: cover;
+	font-size			: 16px;
+}
+.inpCauldron {
+	border				: none;
+	border-radius		: 6px;
+	padding				: 6px;
+	font-size			: 20px;
+	background-color	: black;
+	color				: white;
+}
+
+.dvHelp {
+	z-index				: 20;
+	position			: fixed;
+	background-color	: black;
+	border				: 1px solid black;
+	opacity				: 0.9;
+	width				: 60%;
+	height				: 80%;
+	top					: 100px;
+	left				: 0;
+	right				: 0;
+	margin				: 0 auto;
+	padding				: 20px;
+	color				: white;
+	font-size			: 16px;
+	display				: none;
+}
+
+
+
+
+
+/* ---------------------------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------------------------- */
+
+@-webkit-keyframes winner {
+        0%, 50%, 100% {
+            -webkit-transform: rotate(0deg);
+            font-size:70px;
+            color: #fff;
+        }
+        25% {
+            -webkit-transform: rotate(20deg);
+            font-size:90px;
+            color: #FF16D8;
+        }
+        75% {
+            -webkit-transform: rotate(-20deg);
+            font-size:90px;
+            color: #FF16D8;
+        }
+}
+@-moz-keyframes winner {
+        0%, 50%, 100% {
+            -moz-transform: rotate(0deg);
+            font-size:70px;
+            color: #fff;
+        }
+        25% {
+            -moz-transform: rotate(20deg);
+            font-size:90px;
+            color: #FF16D8;
+        }
+        75% {
+            -moz-transform: rotate(-20deg);
+            font-size:90px;
+            color: #FF16D8;
+        }
+}
+@-ms-keyframes winner {
+        0%, 50%, 100% {
+            -ms-transform: rotate(0deg);
+            font-size:70px;
+            color: #fff;
+        }
+        25% {
+            -ms-transform: rotate(20deg);
+            font-size:90px;
+            color: #FF16D8;
+        }
+        75% {
+            -ms-transform: rotate(-20deg);
+            font-size:90px;
+            color: #FF16D8;
+        }
+}
+
+
+@-webkit-keyframes winnerBox {
+        0%, 50%, 100% {
+            box-shadow: inset 0 0  0px yellow;
+            background-color: #FF0000;
+        }
+        25%, 75% {
+            box-shadow: inset 0 0 30px yellow;
+            background-color: aqua;
+        }
+}
+@-moz-keyframes winnerBox {
+        0%, 50%, 100% {
+            box-shadow: inset 0 0  0px yellow;
+            background-color: #FF0000;
+        }
+        25%, 75% {
+            box-shadow: inset 0 0 30px yellow;
+            background-color: aqua;
+        }
+}
+@-ms-keyframes winnerBox {
+        0%, 50%, 100% {
+            box-shadow: inset 0 0  0px yellow;
+            background-color: #FF0000;
+        }
+        25%, 75% {
+            box-shadow: inset 0 0 30px yellow;
+            background-color: aqua;
+        }
+}
+
+
+
+.winner  {
+    -webkit-animation: winnerBox 2s infinite linear;
+       -moz-animation: winnerBox 2s infinite linear;
+        -ms-animation: winnerBox 2s infinite linear;
+}
+.winner span {
+     -webkit-animation: winner 2s infinite linear;
+        -moz-animation: winner 2s infinite linear;
+         -ms-animation: winner 2s infinite linear;
+}
